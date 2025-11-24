@@ -1,38 +1,62 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <meta charset="UTF-8">
-  <title>Flexbox simples</title>
-
+  <meta charset="utf-8" />
+  <title>Três quadradinhos</title>
   <style>
-    .container {
-      display: flex;               
-      justify-content: center;     
-      align-items: center;         
-      height: 300px;
-      background: #f3b3ff;
-      border: 2px solid #000;
+    /* zera margens da página pra não sobrar "retângulo" */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: transparent;
     }
 
-    .item {
-      width: 100px;
-      height: 100px;
-      background: #7a00cc;
-      color: white;
+    /* centraliza só os itens, sem criar um grande retângulo colorido */
+    .container {
       display: flex;
       justify-content: center;
       align-items: center;
+      gap: 20px; /* espaço entre os quadradinhos */
+      /* sem height, sem background, sem borda */
+    }
+
+    /* estilo dos quadradinhos (pequenos) */
+    .item {
+      width: 100px;
+      height: 100px;
+      border-radius: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-weight: bold;
       font-size: 20px;
+      color: white;
+    }
+
+    .item1 { background-color: pink; color: black; }
+    .item2 { background-color: blueviolet; }
+    .item3 { background-color: plum; color: black; }
+
+    /* caso suas "gifs" sejam imagens, use isto para que fiquem com o mesmo tamanho */
+    .gif {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
       border-radius: 10px;
     }
   </style>
-
 </head>
 <body>
 
   <div class="container">
-    <div class="item">Box</div>
+    <!-- quadradinhos com números -->
+    <div class="item item1">1</div>
+
+    <div class="item item2">2</div>
+
+    <div class="item item3">3</div>
   </div>
 
-</body>
-</html>
+  <!--
+    Se você quiser usar GIFs em vez das divs acima, comente as divs e descomente os <img> abaixo.
+    Coloque seus arquivos gif na mesma pasta e use os nomes corretos (ex.: 1.gif, 2.gif, 3.gi
